@@ -8,16 +8,16 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers
 {
 
-    public class ActivitiesController : BaseApiController
+    public class activitiesController : BaseApiController
     {
         private readonly DataContext _context;
 
-        public ActivitiesController(DataContext context) {
+        public activitiesController(DataContext context) {
             _context = context;
         }
 
 
-        [HttpGet]// api/Activities
+        [HttpGet]// api/activities
         public async Task<ActionResult<List<Activity>>> GetActivity()
         {
             return await _context.Activities.ToListAsync();
